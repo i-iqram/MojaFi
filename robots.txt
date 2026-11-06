@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://mojafi.com.bd/sitemap.xml
+Sitemap: https://i-iqram.github.io/MojaFi/sitemap.xml
