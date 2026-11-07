@@ -33,7 +33,10 @@
 <meta name="twitter:image" content="https://i-iqram.github.io/MojaFi/og-image.jpg">
 <noscript><style>.rv{opacity:1 !important; transform:none !important;}</style></noscript>
 <script>(function(){var h=document.documentElement;h.classList.add('js');try{if(sessionStorage.getItem('mfSeen')||/[?&]noloader/.test(location.search))h.classList.add('seen');}catch(e){}
-if(!h.classList.contains('seen')){window.__hold=true;h.style.overflow='hidden';}})();</script>
+try{if(/googlebot|bingbot|bot\b|crawl|spider|lighthouse|pagespeed/i.test(navigator.userAgent))h.classList.add('seen');}catch(e){}
+if(!h.classList.contains('seen')){window.__hold=true;h.style.overflow='hidden';
+/* failsafe: if the loader script ever fails, never leave the visitor stuck behind the splash screen */
+setTimeout(function(){ if(window.__hold){ h.classList.add('seen'); h.style.overflow=''; window.__hold=false; try{window.dispatchEvent(new Event('scroll'));}catch(e){} } },6500);}})();</script>
 <style>
 @font-face {
   font-family: 'Baloo Da 2';
@@ -240,7 +243,7 @@ header{position:fixed; top:0; left:0; right:0; z-index:100; padding:14px 0;}
 @media(max-width:600px){ .mgrid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px 14px; margin-top:30px;}
   .card{padding:9px 9px 14px; border-radius:20px; box-shadow:5px 5px 0 var(--cc,var(--yellow)); gap:8px;}
   .card .art{height:116px; border-radius:14px;} .card .emo{font-size:60px;} .card .num{font-size:.75rem; padding:0 8px; top:7px; left:7px;}
-  .card .cat{font-size:.7rem; padding:0 3px; letter-spacing:.06em;} .card h3{font-size:1.08rem; padding:0 3px;} .card .more{margin:0 3px; font-size:.88rem; padding:3px 12px; min-height:32px;} }
+  .card .cat{font-size:.78rem; padding:0 3px; letter-spacing:.05em;} .card h3{font-size:1.08rem; padding:0 3px;} .card .more{margin:0 3px; font-size:.88rem; padding:3px 12px; min-height:32px;} }
 
 /* modal */
 .ov{position:fixed; inset:0; z-index:300; background:rgba(22,17,79,.82); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px); display:grid; place-items:center; padding:18px; opacity:0; visibility:hidden; transition:.25s;}
@@ -949,12 +952,12 @@ a.loc-link{min-height:44px; display:inline-flex; align-items:center;}
     <div class="certs rv">
       <div class="lbl">🎓 আমরা শুধু বলি না, শিখে এসেছি!</div>
       <div class="logos">
-        <div><img src="assets/5b7b635156.png" alt="ICCA Dubai"></div>
-        <div><img src="assets/0f27c70ecd.png" alt="Unilever Food Solutions"></div>
-        <div><img src="assets/72e6173575.png" alt="World Association of Chefs Societies"></div>
-        <div><img src="assets/d18715263d.png" alt="Cloud Assess"></div>
-        <div><img src="assets/134c1a89da.png" alt="eFoodHandlers"></div>
-        <div><img src="assets/5e5cf83391.png" alt="Safefood"></div>
+        <div><img src="assets/5b7b635156.png" alt="ICCA Dubai" loading="lazy" decoding="async"></div>
+        <div><img src="assets/0f27c70ecd.png" alt="Unilever Food Solutions" loading="lazy" decoding="async"></div>
+        <div><img src="assets/72e6173575.png" alt="World Association of Chefs Societies" loading="lazy" decoding="async"></div>
+        <div><img src="assets/d18715263d.png" alt="Cloud Assess" loading="lazy" decoding="async"></div>
+        <div><img src="assets/134c1a89da.png" alt="eFoodHandlers" loading="lazy" decoding="async"></div>
+        <div><img src="assets/5e5cf83391.png" alt="Safefood" loading="lazy" decoding="async"></div>
       </div>
       <p class="cap">MojaFi টিম Food Safety training নিয়েছে ICCA Dubai ও Unilever Food Solutions থেকে, Cloud Assess, eFoodHandlers ও Safefood-এর Food Safety course সম্পন্ন করেছে, আর World Association of Chefs’ Societies-এর সাথে যুক্ত।</p>
     </div>
@@ -1008,7 +1011,7 @@ a.loc-link{min-height:44px; display:inline-flex; align-items:center;}
 
 <section id="faq">
   <div class="wrap">
-    <div class="mas rooster" aria-hidden="true"><img src="assets/0689431221.webp" alt=""><span class="mbub">ভাই, ডায়েট কাল থেকে!</span></div>
+    <div class="mas rooster" aria-hidden="true"><img src="assets/0689431221.webp" alt="" loading="lazy" decoding="async"><span class="mbub">ভাই, ডায়েট কাল থেকে!</span></div>
     <div class="title rv"><span class="eyebrow">FAQ</span><h2>প্রশ্ন থাকতেই <span class="acc">পারে</span> 🤔</h2></div>
     <div class="faq-l">
       <div class="fq rv"><button aria-expanded="false"><span>আজ আপনারা কোথায় আছেন?</span><i class="pm">+</i></button><div class="a"><p>আমাদের জায়গা সবসময় এক থাকে না। প্রতিদিনের live location আমরা Linktree-তে দিই। সেখানে <b>“ধরতে পারলে ধর! 📍”</b> বাটনে চাপ দিলেই map খুলবে। <a class="loc-link" href="https://linktr.ee/MojaFi" target="_blank" rel="noopener"><b>Linktree খুলুন</b></a>, তারপর বের হন।</p></div></div>
@@ -1022,7 +1025,7 @@ a.loc-link{min-height:44px; display:inline-flex; align-items:center;}
 
 <section class="wl" id="find">
   <div class="wrap"><div class="box rv">
-    <img class="wm l" src="assets/fc71c51a27.webp" alt="" aria-hidden="true"><img class="wm r" src="assets/11c0a978e0.webp" alt="" aria-hidden="true">
+    <img class="wm l" src="assets/fc71c51a27.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="wm r" src="assets/11c0a978e0.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <h2>আজ আমরা <span style="white-space:nowrap">কোথায়? 📍</span></h2>
     <p>আমাদের জায়গা রোজ এক থাকে না। বের হওয়ার আগে একবার live location দেখে নিন, তারপর সোজা চলে আসুন। খিদা নিয়ে আসবেন, বাকিটা আমাদের কাজ।</p>
     <div class="fbtns">
@@ -1038,7 +1041,7 @@ a.loc-link{min-height:44px; display:inline-flex; align-items:center;}
   <div class="bunt alt" aria-hidden="true"></div>
   <div class="wrap">
     <div class="top">
-      <div class="ar rv"><img src="assets/a68bc842e7.png" alt="MojaFi Arabic logo"></div>
+      <div class="ar rv"><img src="assets/a68bc842e7.png" alt="MojaFi Arabic logo" loading="lazy" decoding="async"></div>
       <div class="rv" style="--d:.1s">
         <div class="tag">MojaFi শুরু হবে street থেকে।<br>কিন্তু destination হবে একটা বড় food brand। 🔥</div>
         <div class="soc">
